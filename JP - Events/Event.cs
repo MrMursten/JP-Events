@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Net;
 
-namespace JP___Events
+namespace JP_Events
 {
 
     public class Rootobject
@@ -76,6 +75,89 @@ namespace JP___Events
         public override string ToString()
         {
             return Text;
+        }
+    }
+
+    public class EventClient
+    {
+        public string Url { get; set; }
+        public static readonly string CACHE_FILE = "Events.json";
+
+        public EventClient(string url)
+        {
+            this.Url = url;
+        }
+
+        public Event[] GetEvents()
+        {
+            long cacheLastChanged = ExtractLastChange(CACHE_FILE);
+            long remoteLastChanged = ExtractLastChange(new Uri(this.Url));
+
+            string jsonString = null;
+            if (cacheLastChanged == remoteLastChanged)
+            {
+                //Use Cache
+                jsonString = File.ReadAllText(CACHE_FILE);
+            }
+            else
+            {
+                //Use remote
+                WebClient client = new WebClient();
+                jsonString = client.DownloadString(this.Url);
+                CacheEvents(jsonString);
+            }
+            
+            JsonSerializer serializer = new JsonSerializer();
+            Rootobject root = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+
+            return root.events;
+        }
+
+        private void CacheEvents(string json)
+        {
+            File.WriteAllText(CACHE_FILE, json);
+        }
+
+        private long ExtractLastChange(Stream stream)
+        {
+            long lastChange = -1;
+            using (StreamReader streamReader = new StreamReader(stream))
+            using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
+            {
+                while (jsonReader.Read() && lastChange == -1)
+                {
+                    JsonToken tokenType = jsonReader.TokenType;
+                    if (tokenType == JsonToken.PropertyName && jsonReader.Value.Equals("last_change"))
+                    {
+                        jsonReader.Read();
+                        lastChange = (long)jsonReader.Value;
+                    }
+                }
+            }
+            return lastChange;
+        }
+
+        private long ExtractLastChange(Uri uri)
+        {
+            WebClient client = new WebClient();
+            using (var stream = client.OpenRead(uri))
+            {
+                return ExtractLastChange(stream);
+            }
+            
+        }
+
+        private long ExtractLastChange(string path)
+        {
+            long result = -1;
+            if (File.Exists(path))
+            {
+                using (var stream = new FileStream(path, FileMode.Open))
+                {
+                    result = ExtractLastChange(stream);
+                }
+            }
+            return result;
         }
     }
 

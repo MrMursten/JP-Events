@@ -14,19 +14,3 @@ c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\
 c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events.pdb
 c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\bin\Debug\Newtonsoft.Json.dll
 c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\bin\Debug\JP - Events.exe.config
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\bin\Debug\JP - Events.exe
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\bin\Debug\JP - Events.pdb
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP - Events.csprojResolveAssemblyReference.cache
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\MainWindow.g.cs
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\App.g.cs
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP - Events_MarkupCompile.cache
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP - Events_MarkupCompile.lref
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\MainWindow.baml
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP - Events.g.resources
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP___Events.Properties.Resources.resources
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP - Events.csproj.GenerateResource.Cache
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP - Events.exe
-C:\Users\Blåbær\Documents\Visual Studio 2017\Projects\JP-Events\JP - Events\obj\Debug\JP - Events.pdb

@@ -1,22 +1,11 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace JP___Events
+namespace JP_Events
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,17 +14,16 @@ namespace JP___Events
     {
         public Event[] events;
         public string selectedEventPeriod;
+        WebClient client = new WebClient();
 
         public MainWindow()
         {
             InitializeComponent();
-            string jsonString = new WebClient().DownloadString("http://events.makeable.dk/api/getEvents");
 
-            JsonSerializer serializer = new JsonSerializer();
+            EventClient client = new EventClient("http://events.makeable.dk/api/getEvents");
+            events = client.GetEvents();
 
-            Rootobject root = JsonConvert.DeserializeObject<Rootobject>(jsonString);
 
-            events = root.events;
 
             listBox.ItemsSource = events;
             listBox.DisplayMemberPath = "title";
@@ -147,11 +135,14 @@ namespace JP___Events
             if (listBox.SelectedItem != null)
             {
                 Event ev = (Event)listBox.SelectedItem;
+
+                //Dette var lavet til at omregne den numeriske værdi som der er på tidspunkterne til en string af korrekt format.
+                //Tallene var ikke lig et antal ticks - hvilket var hvad jeg havde forventet.
                 long startMilis = ev.datelist.Length != 0 ? (ev.datelist[0].start) : 0;
                 long endMilis = ev.datelist.Length != 0 ? (ev.datelist[0].end) : 0;
 
-                String start = startMilis > 0 ? new DateTime(startMilis * 10000).ToString() : "";
-                String end = endMilis > 0 ? new DateTime(endMilis * 10000).ToString() : "";
+                String start = startMilis > 0 ? startMilis.ToString() : "";
+                String end = endMilis > 0 ? endMilis.ToString() : "";
                 selectedEventPeriod = start + " - " + end;
                 txtTime.Text = selectedEventPeriod;
             }
