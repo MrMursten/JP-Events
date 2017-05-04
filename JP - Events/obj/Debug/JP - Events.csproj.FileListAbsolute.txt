@@ -1,0 +1,16 @@
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\bin\Debug\JP - Events.exe.config
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\bin\Debug\JP - Events.exe
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\bin\Debug\JP - Events.pdb
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events.csprojResolveAssemblyReference.cache
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\MainWindow.g.cs
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\App.g.cs
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events_MarkupCompile.cache
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events_MarkupCompile.lref
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\MainWindow.baml
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events.g.resources
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP___Events.Properties.Resources.resources
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events.csproj.GenerateResource.Cache
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events.exe
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\obj\Debug\JP - Events.pdb
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\bin\Debug\Newtonsoft.Json.dll
+c:\users\blåbær\documents\visual studio 2017\Projects\JP - Events\JP - Events\bin\Debug\Newtonsoft.Json.xml

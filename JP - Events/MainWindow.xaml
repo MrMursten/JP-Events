@@ -1,0 +1,40 @@
+﻿<Window x:Class="JP___Events.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JP___Events"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="299" Margin="308,10,0,0" VerticalAlignment="Top" Width="199" >
+            <StackPanel Height="32" Orientation="Horizontal">
+                <Label Content="Title" Width="60"/>
+                <TextBlock x:Name="txtTitle" TextWrapping="Wrap" Width="149" Text="{Binding ElementName=listBox, Path=SelectedItem.title}"/>
+            </StackPanel>
+            <StackPanel Height="32" Orientation="Horizontal">
+                <Label Content="Where?" Width="60"/>
+                <TextBlock x:Name="txtDestination" TextWrapping="Wrap" Width="149" Text="{Binding ElementName=listBox, Path=SelectedItem.location_name}"/>
+            </StackPanel>
+            <StackPanel Height="32" Orientation="Horizontal">
+                <Label Content="When?" Width="60"/>
+                <TextBlock x:Name="txtTime" TextWrapping="Wrap" Width="149" Text="{Binding Path=selectedEventPeriod}"/>
+            </StackPanel>
+            <StackPanel Height="203" Orientation="Vertical">
+                <Label Content="Description" Width="78"/>
+                <TextBlock x:Name="txtDescription" TextWrapping="Wrap" Height="177" Text="{Binding ElementName=listBox, Path=SelectedItem.description}"/>
+            </StackPanel>
+        </StackPanel>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="199" Margin="10,110,0,0" VerticalAlignment="Top" Width="293" SelectionChanged="listBox_SelectionChanged"/>
+        <ComboBox x:Name="cbSort" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbSort_SelectionChanged">
+
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Sort By:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="146,10,0,0" Text="Category:"/>
+        <ComboBox x:Name="cbCategory" HorizontalAlignment="Left" Margin="146,26,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbCategory_SelectionChanged">
+
+        </ComboBox>
+
+
+    </Grid>
+</Window>
