@@ -18,7 +18,7 @@
             </StackPanel>
             <StackPanel Height="32" Orientation="Horizontal">
                 <Label Content="When?" Width="60"/>
-                <TextBlock x:Name="txtTime" TextWrapping="Wrap" Width="149" Text="{Binding Path=selectedEventPeriod}"/>
+                <TextBlock x:Name="txtTime" TextWrapping="Wrap" Width="149"/>
             </StackPanel>
             <StackPanel Height="203" Orientation="Vertical">
                 <Label Content="Description" Width="78"/>

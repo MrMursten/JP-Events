@@ -87,17 +87,6 @@ namespace JP___Events
 
             if (cbCategory.SelectedItem != null &&  cbSort.SelectedItem != null)
             {
-                //Sort
-                string sortString = (cbSort.SelectedItem as ComboboxItem).Value;
-                if (sortString == "Time")
-                {
-                    newEvents = newEvents.OrderBy(x => x.datelist.Length != 0 ? x.datelist[0].start : long.MinValue).ToArray();
-                }
-                else if (sortString == "Title")
-                {
-                    newEvents = newEvents.OrderBy(x => x.title).ToArray();
-                }
-
                 //Filter
                 string filterString = (cbCategory.SelectedItem as ComboboxItem).Value;
                 if (filterString == "Musik")
@@ -135,6 +124,17 @@ namespace JP___Events
                         }
                     }
                     newEvents = listEvents.ToArray<Event>();
+                }
+
+                //Sort
+                string sortString = (cbSort.SelectedItem as ComboboxItem).Value;
+                if (sortString == "Time")
+                {
+                    newEvents = newEvents.OrderBy(x => x.datelist.Length != 0 ? x.datelist[0].start : long.MinValue).ToArray();
+                }
+                else if (sortString == "Title")
+                {
+                    newEvents = newEvents.OrderBy(x => x.title).ToArray();
                 }
 
                 listBox.ItemsSource = newEvents;
